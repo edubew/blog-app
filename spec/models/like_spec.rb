@@ -13,7 +13,7 @@ RSpec.describe Like, type: :model do
     describe '#update_likes_counter' do
       it 'updates the likes_counter of the post' do
         post.update(likes_counter: 2)
-        like = Like.create(author_id: user.id, post: post)
+        Like.create(author_id: user.id, post:)
         post.reload
         expect(post.likes_counter).to eq(2)
       end
