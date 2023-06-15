@@ -6,7 +6,7 @@ RSpec.describe Comment, type: :model do
     it { should belong_to(:post) }
   end
 
-  describe 'update_comment_counter' do
+  describe 'update_comments_counter' do
     it 'updates the comments counter of the associated post' do
       comment = Comment.new
 
@@ -16,7 +16,7 @@ RSpec.describe Comment, type: :model do
 
       expect(post).to receive(:update).with(comments_counter: 0)
 
-      comment.update_posts_comments_counter
+      comment.update_comments_counter
     end
   end
 end

@@ -15,14 +15,14 @@ RSpec.describe Post, type: :model do
   end
 
   describe 'update_posts_counter' do
-    let(:user) { User.create!(name: 'Winnie', posts_counter: 0) }
-    let!(:post1) { user.posts.create!(title: 'Post 1', likes_counter: 0, comments_counter: 0) }
-    let!(:post2) { user.posts.create!(title: 'Post 2', likes_counter: 0, comments_counter: 0) }
+    let(:user) { User.create!(name: 'Winnie', post_counter: 0) }
 
-    it 'updates the posts_counter of the user' do
+    it 'updates the post_counter of the user' do
       expect do
-        Post.update_posts_counter(user.id)
-      end.to change { user.reload.posts_counter }.from(0).to(2)
+        user.posts.create!(title: 'Post 1')
+        user.posts.create!(title: 'Post 2')
+        user.reload
+      end.to change { user.post_counter }.from(0).to(2)
     end
   end
 end

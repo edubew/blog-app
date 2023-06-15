@@ -1,4 +1,4 @@
-class AddForeignKeyConstraintToPosts < ActiveRecord::Migration[7.0]
+class AddAuthorIdToPost < ActiveRecord::Migration[7.0]
   def change
     add_column :posts, :author_id, :integer
     add_foreign_key :posts, :users, column: :author_id
