@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :comment do
-    text { "MyString" }
+    text { 'MyString' }
   end
 end
