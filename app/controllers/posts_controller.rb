@@ -1,4 +1,4 @@
-class PostsContoller < ApplicationController
+class PostsController < ApplicationController
   def index
     # Retrieve all posts from the db
   end
