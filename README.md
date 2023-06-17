@@ -4,14 +4,11 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Project Demo](#project-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
-  - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -38,9 +35,6 @@
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
 
-## 🚀 Project Demo <a name="project-demo"><a>
-`COMING SOON`
-
 ### Key Features <a name="key-features"></a>
 
 - **Creating a data model.**
@@ -59,18 +53,21 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
+## Setup
 - At first Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
   git clone https://github.com/edubew/blog-box.git
 ```
-
+## Prerequisites
 - To use this repo to your local computer make sure you have installed:
     - [Ruby](https://www.ruby-lang.org/)
     - [Rails](https://guides.rubyonrails.org/getting_started.html)
     - [Postgresql](https://www.postgresql.org/)
-- To install necessary require packages open your favorite cd to this project then try the below command
+ 
+## Install
+- To install the necessary require packages open your favorite cd to this project then try the below command
 ```
 gem install
 ```
@@ -83,7 +80,10 @@ or
 rails s
 ```
 
-
+## Run Tests
+```
+rspec
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
