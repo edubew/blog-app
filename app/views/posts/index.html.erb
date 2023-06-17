@@ -1,1 +1,39 @@
-<h2>A list of all posts for a given user</h2>
+<div class="posts_container">
+  <div class="user_container">
+    <img src="<%= @user.photo %>" alt="user" />
+    <div class="user_content">
+      <h2><%= @user.name %></h2>
+      <h4>Number of posts: <%= @posts.count %></h4>
+    </div>
+  </div>
+
+  <div class="posts">
+    <% @posts.each do |post| %>
+      <div class="post_item">
+      <div>
+      <h3><%= post.title %></h3>
+        <p><%= post.text.split(" ")[0..80].join(" ") %></p>
+      </div>
+        <div class="comments_likes">
+          <span class="comments">Comments: <%= post.comments_counter %>, </span>
+          <span class="likes">Likes: <%= post.likes_counter %></span>
+        </div>
+        </div>
+        <div class="comments_container">
+          <% post.recent_comments.each do |comment| %>
+            <div class="comment">
+            <span><%= comment.author.name %>:</span>
+              <span><%= comment.text %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if @posts.empty? %>
+      <div class="no_content">
+        <p>No posts for this user!</p>
+      </div>
+    <% end %>
+  </div>
+</div>

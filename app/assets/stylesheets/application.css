@@ -1,15 +1,92 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.main_container h1 {
+  text-align: center;
+}
+
+.users_list {
+  margin: 2%;
+}
+
+.user_container {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.user_container img {
+  border: 2px solid black;
+  width: 6rem;
+  aspect-ratio: 1/1;
+}
+
+.user_content {
+  display: flex;
+  padding: 0 0.6rem;
+  gap: 3rem;
+  width: 35vw;
+  border: 2px solid black;
+  align-items: center;
+}
+
+.user_content h4 {
+  margin-top: 4rem;
+  padding: 0;
+}
+
+.user_layout {
+  margin: 2%;
+}
+
+.bio {
+  border: 2px solid black;
+  width: 45vw;
+  padding: 0 0.6rem;
+}
+
+.post_item {
+  border: 2px solid black;
+  width: 45vw;
+  display: flex;
+  padding: 0 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.comments_likes {
+  float: right;
+  margin-right: 0;
+}
+
+.comments_container {
+  border: 2px solid black;
+  width: 45vw;
+  padding: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.button {
+  border: 2px solid black;
+  margin: 0 20%;
+  padding: 0.6rem;
+  box-shadow: 2px 2px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.no_content {
+  border: 2px solid black;
+  width: 45vw;
+  padding: 0.6rem;
+  margin-top: 0.6rem;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+}
+
+.no_comment {
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+}
