@@ -11,10 +11,17 @@
     <h3><%= @post.text %></h3>
   </div>
 
+  <div class="cta_buttons">
+    <%= form_with url: "/users/#{@post.author.id}/posts/#{@post.id}/likes" do |form| %>
+    <%= form.submit 'Like', class: 'like_button' %>
+    <% end %>
+    <div><%= link_to "Add Comment", new_user_post_comment_path(@post.author.id, @post.id) %></div>
+  </div>
+
   <div class="comments_container">
     <% @comments = Post.find(@post.id).comments %>
     <% if @comments.any? %>
-      <% @comments.each do |comment| %>
+      <% @comments.includes(:author).each do |comment| %>
         <div>
           <span><%= comment.author.name %> : <%= comment.text %></span>
         </div>
