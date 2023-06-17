@@ -2,7 +2,7 @@
 <h1>My Blog App</h1>
 
 <div class = "users_list">
-<%= @users.each do |user| %>
+<% @users.each do |user| %>
     <%= render partial: "users/user", locals: { user: user } %>
     <% end %>
 </div>
