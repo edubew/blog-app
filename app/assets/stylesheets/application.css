@@ -57,7 +57,8 @@ a {
 }
 
 .comments_likes {
-  float: right;
+  justify-self: flex-end;
+  align-self: flex-end;
   margin-right: 0;
 }
 

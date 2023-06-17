@@ -9,6 +9,7 @@
 
   <div class="posts">
     <% @posts.each do |post| %>
+      <%= link_to user_post_path(@user, post.id) do %>
       <div class="post_item">
       <div>
       <h3><%= post.title %></h3>
@@ -27,6 +28,9 @@
             </div>
           <% end %>
         </div>
+        
+        <%= link_to "Add Post", new_user_post_path(user_id: @user.id), class: "button_post" %>
+        <% end %>
       </div>
     <% end %>
 

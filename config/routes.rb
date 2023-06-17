@@ -1,8 +1,9 @@
+# config/routes.rb
 Rails.application.routes.draw do
-root to: "users#index"
-
-  resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show]
+  resources :users do
+    resources :posts do
+      resources :comments
+      resources :likes
+    end
   end
-  resources :posts, only: [:index, :show]
 end
