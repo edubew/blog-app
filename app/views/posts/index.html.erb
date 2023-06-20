@@ -8,7 +8,7 @@
   </div>
 
   <div class="posts">
-    <% @posts.each do |post| %>
+    <% @posts.includes(:comments, :author).each do |post| %>
       <%= link_to user_post_path(@user, post.id) do %>
       <div class="post_item">
       <div>
