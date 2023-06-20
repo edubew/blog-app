@@ -17,19 +17,10 @@ RSpec.feature 'User Show Page', type: :feature do
     visit user_path(user1)
   end
 
-  scenario 'displays the user profile info: name' do
+  scenario 'displays the user profile info: name, picture, bio and number of posts' do
     expect(page).to have_content(user1.name)
-  end
-
-  scenario 'displays the user profile info: picture' do
     expect(page).to have_css("img[src*='https://unsplash.com/photos/F_-0BxGuVvo']")
-  end
-
-  scenario 'displays the user profile info: number of posts' do
     expect(page).to have_content("Number of posts: #{user1.post_counter}")
-  end
-
-  scenario 'displays the user profile info: bio' do
     expect(page).to have_content(user1.bio)
   end
 
@@ -39,19 +30,11 @@ RSpec.feature 'User Show Page', type: :feature do
     expect(page).to have_content('Ut enim ad minim veniam')
   end
 
-  scenario 'displays button to see all posts' do
+  scenario 'display a functional see all posts button, and user is redirected to single posts onclick' do
     expect(page).to have_content('See all posts')
-  end
-
-  scenario 'user is directed to all posts when clicking on button' do
     find('a.button').click
-    expect(page).to have_current_path(user_posts_path(user1) + '/')
-  end
-
-  scenario 'user is directed to individual post when clicking over post' do
+    expect(page).to have_current_path("#{user_posts_path(user1)}/")
     click_link 'Sed do eiusmod tempor incididunt'
-    post = user1.posts.find_by(title: 'Post 3').id
-
-    expect(page).to have_current_path(user_post_path(user1, post))
+    expect(page).to have_current_path(user_post_path(user1, user1.posts.find_by(title: 'Post 3').id))
   end
 end
