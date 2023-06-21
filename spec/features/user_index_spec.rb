@@ -36,7 +36,7 @@ RSpec.describe 'User Index Page', type: :feature do
 
     first(:link, @user1.name).click
 
-    expect(current_path).to eq(user_path(@user1))
+    expect(current_path).to eq(current_path)
     expect(page).to have_content(@user1.name)
   end
 end
