@@ -30,6 +30,13 @@
         </div>
         
         <%= link_to "Add Post", new_user_post_path(user_id: @user.id), class: "button_post" %>
+        <% if @posts.count > 3 %>
+        <button>
+        <%= link_to 'Pagination', user_post_path(@user, @posts.first) %>
+      </button>
+      <% end %>
+
+      
         <% end %>
       </div>
     <% end %>
