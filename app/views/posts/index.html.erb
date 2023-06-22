@@ -8,7 +8,7 @@
   </div>
 
   <div class="posts">
-    <% @posts.each do |post| %>
+    <% @posts.includes(:comments, :author).each do |post| %>
       <%= link_to user_post_path(@user, post.id) do %>
       <div class="post_item">
       <div>
@@ -30,6 +30,13 @@
         </div>
         
         <%= link_to "Add Post", new_user_post_path(user_id: @user.id), class: "button_post" %>
+        <% if @posts.count > 3 %>
+        <button>
+        <%= link_to 'Pagination', user_post_path(@user, @posts.first) %>
+      </button>
+      <% end %>
+
+      
         <% end %>
       </div>
     <% end %>

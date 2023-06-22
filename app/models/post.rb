@@ -19,7 +19,7 @@ class Post < ApplicationRecord
 
   # Retrieve most recent posts
   def recent_comments
-    comments.order(created_at: :desc).limit(5)
+    comments.includes(:author).order(created_at: :desc).limit(5)
   end
 
   def self.update_post_counter(user_id)
