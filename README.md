@@ -17,7 +17,7 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-# 📖 Blog Box <a name="about-project"></a>
+# 📖 Blog App <a name="about-project"></a>
 
 **Blog Box** is a platform that enables individuals to create and publish blog posts. It provides an interface for writing and editting content, in addition to providing an interface for users to comment and like other's posts.
 
